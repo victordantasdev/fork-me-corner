@@ -35,7 +35,7 @@
     "trailingComma": "es5"
   },
   "name": "fork-me-corner",
-  "author": "victordantasdev",
+  "author": "victordantasdev <victordantasdeveloper@gmail.com>",
   "module": "dist/fork-me-corner.esm.js",
   "size-limit": [
     {
@@ -47,6 +47,14 @@
       "limit": "10 KB"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victordantasdev/fork-me-corner"
+  },
+  "bugs": {
+    "url": "https://github.com/victordantasdev/fork-me-corner/issues"
+  },
+  "homepage": "https://github.com/victordantasdev/fork-me-corner#readme",
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.5",
     "@types/react": "^17.0.38",

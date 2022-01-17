@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A component to easily put a fork-me corner on your projects.",
   "license": "MIT",
   "main": "dist/index.js",

@@ -1,4 +1,4 @@
-# Fork-me Corner
+# Fork me Corner
 
 > A component to easily put a fork-me corner on your projects.
 

@@ -15,10 +15,11 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "lint": "eslint --ignore-path .gitignore",
+    "prepare": "husky install",
     "size": "size-limit",
-    "analyze": "size-limit --why"
+    "analyze": "size-limit --why",
+    "commit": "cz"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -56,10 +57,21 @@
   },
   "homepage": "https://github.com/victordantasdev/fork-me-corner#readme",
   "devDependencies": {
+    "@commitlint/cli": "^16.0.2",
+    "@commitlint/config-conventional": "^16.0.0",
     "@size-limit/preset-small-lib": "^7.0.5",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.20",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -69,6 +81,14 @@
     "typescript": "^4.5.4"
   },
   "dependencies": {
+    "commitizen": "^4.2.4",
+    "commitlint": "^16.0.2",
+    "cz": "^1.8.2",
     "styled-components": "^5.3.3"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

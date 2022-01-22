@@ -4,8 +4,6 @@
 
 ## Install
 
----
-
 ```bash
 npm i fork-me-corner
 ```
@@ -17,8 +15,6 @@ yarn add fork-me-corner
 ```
 
 ## Usage
-
----
 
 ```tsx
 import { ForkMe } from 'fork-me-corner';

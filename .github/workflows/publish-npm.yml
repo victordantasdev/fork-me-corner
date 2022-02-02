@@ -1,0 +1,36 @@
+name: Node.js Package
+
+on:
+  workflow_dispatch:
+    branches: [main]
+  pull_request:
+    types: [opened, synchronize]
+
+defaults:
+  run:
+    working-directory: apps/cli/apps/cli
+
+jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: apps/cli
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      
+      
+      - name: Dependency install
+        run: yarn
+      - name: Compile
+        run: yarn build
+      - name: Test
+        run: yarn test
+      - name: Publish 
+        run: npm publish --access public
+
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

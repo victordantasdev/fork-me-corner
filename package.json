@@ -14,18 +14,13 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "eslint",
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
   "peerDependencies": {
     "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
   },
   "prettier": {
     "printWidth": 80,
@@ -35,14 +30,14 @@
   },
   "name": "fork-me-corner",
   "author": "victordantasdev <victordantasdeveloper@gmail.com>",
-  "module": "dist/mylib.esm.js",
+  "module": "dist/fork-me-corner.esm.js",
   "size-limit": [
     {
-      "path": "dist/mylib.cjs.production.min.js",
+      "path": "dist/fork-me-corner.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/mylib.esm.js",
+      "path": "dist/fork-me-corner.esm.js",
       "limit": "10 KB"
     }
   ],
@@ -51,7 +46,14 @@
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.21",
-    "husky": "^7.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "size-limit": "^7.0.5",

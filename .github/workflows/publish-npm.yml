@@ -3,33 +3,33 @@ name: Node.js Package
 on:
   workflow_dispatch:
     branches: [main]
-  pull_request:
-    types: [opened, synchronize]
-
-defaults:
-  run:
-    working-directory: apps/cli/apps/cli
+  push:
+    paths:
+      - 'package.json'
 
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          path: apps/cli
       - uses: actions/setup-node@v2
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       
-      
-      - name: Dependency install
+      - name: Dependencies install
         run: yarn
-      - name: Compile
+      
+      - name: Runs compiler
         run: yarn build
-      - name: Test
+      
+      - name: Runs linter
+        run: yarn lint
+      
+      - name: Tests the code
         run: yarn test
-      - name: Publish 
+      
+      - name: Publish on npm
         run: npm publish --access public
 
         env:

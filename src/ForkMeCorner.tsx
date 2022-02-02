@@ -7,12 +7,11 @@ export type Props = {
   octoColor?: string;
   flagDirection?: 'horizontal' | 'vertical'
   prideFlag?:
-    'lgbt' |
+    'lgbtqia_plus' |
     'asexual' |
     'bisexual' |
     'aromantic' |
     'nonbinary' |
-    'aromantic' |
     'transgender' |
     'genderqueer' |
     'genderfluid' |
@@ -49,8 +48,7 @@ const Corner = styled.a<Props>`
     top: 0;
     border: 0;
     right: 0;
-    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
-    /* transform: rotate(180deg); */
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
   }
 
   &:hover .octo-arm {
@@ -113,9 +111,9 @@ export function ForkMe({
           className="octo-body"
         />
 
-        {/* lgbt flag */}
+        {/* lgbtqia_plus flag */}
         <defs>
-          <linearGradient id="lgbt" gradientTransform={rotate}>
+          <linearGradient id="lgbtqia_plus" gradientTransform={rotate}>
             <stop offset="16.66%" stopColor="#FE0000" />
             <stop offset="16.66%" stopColor="#FD8C00" />
             <stop offset="33.32%" stopColor="#FD8C00" />

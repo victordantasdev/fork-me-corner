@@ -1,6 +1,5 @@
 {
   "version": "0.1.2",
-  "description": "A component to easily put a fork-me corner on your projects.",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -15,11 +14,10 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "eslint --ignore-path .gitignore",
-    "prepare": "husky install",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why",
-    "commit": "cz"
+    "analyze": "size-limit --why"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -37,58 +35,31 @@
   },
   "name": "fork-me-corner",
   "author": "victordantasdev <victordantasdeveloper@gmail.com>",
-  "module": "dist/fork-me-corner.esm.js",
+  "module": "dist/mylib.esm.js",
   "size-limit": [
     {
-      "path": "dist/fork-me-corner.cjs.production.min.js",
+      "path": "dist/mylib.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/fork-me-corner.esm.js",
+      "path": "dist/mylib.esm.js",
       "limit": "10 KB"
     }
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/victordantasdev/fork-me-corner"
-  },
-  "bugs": {
-    "url": "https://github.com/victordantasdev/fork-me-corner/issues"
-  },
-  "homepage": "https://github.com/victordantasdev/fork-me-corner#readme",
   "devDependencies": {
-    "@commitlint/cli": "^16.0.2",
-    "@commitlint/config-conventional": "^16.0.0",
     "@size-limit/preset-small-lib": "^7.0.5",
     "@types/react": "^17.0.38",
     "@types/react-dom": "^17.0.11",
-    "@types/styled-components": "^5.1.20",
-    "@typescript-eslint/eslint-plugin": "^5.10.0",
-    "@typescript-eslint/parser": "^5.10.0",
-    "cz-conventional-changelog": "3.3.0",
-    "eslint": "^8.7.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
+    "@types/styled-components": "^5.1.21",
     "husky": "^7.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "size-limit": "^7.0.5",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5"
   },
   "dependencies": {
-    "commitizen": "^4.2.4",
-    "commitlint": "^16.0.2",
-    "cz": "^1.8.2",
     "styled-components": "^5.3.3"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }

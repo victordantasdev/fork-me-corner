@@ -34,11 +34,11 @@
   "size-limit": [
     {
       "path": "dist/fork-me-corner.cjs.production.min.js",
-      "limit": "10 KB"
+      "limit": "20 KB"
     },
     {
       "path": "dist/fork-me-corner.esm.js",
-      "limit": "10 KB"
+      "limit": "20 KB"
     }
   ],
   "devDependencies": {

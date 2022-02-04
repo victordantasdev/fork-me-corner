@@ -1,33 +1,7 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable import/no-relative-packages */
-/* eslint-disable import/no-extraneous-dependencies */
-import 'react-app-polyfill/ie11';
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import React from 'react';
 import styled from 'styled-components';
-import { ForkMe } from '../src/index';
-
-type prideFlagsType =
-  'lgbtqia_plus' |
-  'asexual' |
-  'bisexual' |
-  'aromantic' |
-  'nonbinary' |
-  'transgender' |
-  'genderqueer' |
-  'genderfluid' |
-  'pansexual' |
-  'philly' |
-  'polysexual' |
-  'neutrois' |
-  'demigirl' |
-  'agender' |
-  'demiboy' |
-  'androgyne' |
-  'lesbian';
-
-type flagDirectionType = 'horizontal' | 'vertical';
+import { ForkMe } from '../fork-me-corner/src/';
+import { flagDirectionType, prideFlagsType } from '../types/flags';
 
 const Container = styled.div`
   display: flex;
@@ -107,7 +81,7 @@ const PrideFlags = styled.div`
   }
 `;
 
-function App() {
+const Home = () => {
   const prideFlags = [
     { label: 'lgbtqia +', value: 'lgbtqia_plus' },
     { label: 'asexual', value: 'asexual' },
@@ -134,14 +108,16 @@ function App() {
   const [selectedFlag, setSelectedFlag] = React.useState<prideFlagsType>();
   const [flagDirection, setFlagDirection] = React.useState<flagDirectionType>();
 
-  const handleOnChange = (flagValue) => {
+  const handleOnChange = (flagValue: string) => {
     const flags = document.querySelectorAll('.flag');
     const flagItem = document.querySelector(`.${flagValue}`) as HTMLInputElement;
     const isChecked = flagItem.checked;
 
-    flags.forEach((flag: HTMLInputElement) => {
-      if (flag !== flagValue) {
-        flag.checked = false;
+    flags.forEach((flag) => {
+      const flagProps = flag as HTMLInputElement; 
+
+      if (flagProps.value !== flagValue) {
+        flagProps.checked = false;
       }
 
       flagItem.checked = isChecked;
@@ -160,8 +136,8 @@ function App() {
     return setSelectedFlag(flagItem.value as prideFlagsType);
   };
 
-  const handleFlagDirection = (flagDirectionValue) => {
-    const flags = document.querySelectorAll('.flagDirection');
+  const handleFlagDirection = (flagDirectionValue: string) => {
+    const flagsDirections = document.querySelectorAll('.flagDirection');
     const flagItem = document.querySelector(`.${flagDirectionValue}`) as HTMLInputElement;
     const isChecked = flagItem.checked;
 
@@ -169,8 +145,8 @@ function App() {
 
     if (!flagItem.checked) setFlagDirection(undefined);
 
-    flags.forEach((flag: HTMLInputElement) => {
-      if (flag !== flagDirectionValue) {
+    flagsDirections.forEach((flag: HTMLInputElement) => {
+      if (flag.value !== flagDirectionValue) {
         flag.checked = false;
       }
 
@@ -317,4 +293,4 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default Home;

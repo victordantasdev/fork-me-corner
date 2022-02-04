@@ -1,6 +1,10 @@
-*.log
-.DS_Store
-node_modules
-.cache
-.parcel-cache
 dist
+coverage
+node_modules
+
+*.log
+
+.next
+.cache
+.DS_Store
+.parcel-cache

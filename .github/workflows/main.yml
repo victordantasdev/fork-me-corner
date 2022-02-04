@@ -1,8 +1,19 @@
 name: CI
-on: [push]
+
+on: 
+  workflow_dispatch:
+    branches: [main]
+  push:
+    paths:
+      - 'package.json'
+
+defaults:
+  run:
+    working-directory: src/fork-me-corner/src/fork-me-corner
+
 jobs:
   build:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+    name: Test and verify package size on Node ${{ matrix.node }} on ${{ matrix.os }}
 
     runs-on: ${{ matrix.os }}
     strategy:
@@ -13,20 +24,44 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
+        with:
+          path: src/fork-me-corner
 
       - name: Use Node ${{ matrix.node }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
 
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
-
-      - name: Lint
-        run: yarn lint
+      - name: Install deps
+        run: yarn
 
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2
 
-      - name: Build
+      - name: Size
+        run: yarn size
+  
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: src/fork-me-corner
+      
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Install deps
+        run: yarn
+      
+      - name: Runs compiler
         run: yarn build
+      
+      - name: Publish on npm
+        run: npm publish --access public
+
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

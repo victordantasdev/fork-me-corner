@@ -18,6 +18,14 @@
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victordantasdev/fork-me-corner.git#main"
+  },
+  "bugs": {
+    "url": "https://github.com/victordantasdev/fork-me-corner/issues"
+  },
+  "homepage": "https://github.com/victordantasdev/fork-me-corner/tree/main#readme",
   "peerDependencies": {
     "react": ">=16"
   },
@@ -54,5 +62,11 @@
   },
   "dependencies": {
     "styled-components": "^5.3.3"
-  }
+  },
+  "keywords": [
+    "github",
+    "fork-me-corner",
+    "opensource",
+    "react"
+  ]
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ForkMe } from '../fork-me-corner/src/';
+import { ForkMe } from '../fork-me-corner/src';
 import { flagDirectionType, prideFlagsType } from '../types/flags';
 
 const Container = styled.div`
@@ -81,7 +81,7 @@ const PrideFlags = styled.div`
   }
 `;
 
-const Home = () => {
+function Home() {
   const prideFlags = [
     { label: 'lgbtqia +', value: 'lgbtqia_plus' },
     { label: 'asexual', value: 'asexual' },
@@ -114,7 +114,7 @@ const Home = () => {
     const isChecked = flagItem.checked;
 
     flags.forEach((flag) => {
-      const flagProps = flag as HTMLInputElement; 
+      const flagProps = flag as HTMLInputElement;
 
       if (flagProps.value !== flagValue) {
         flagProps.checked = false;
@@ -200,7 +200,7 @@ const Home = () => {
             value={octoColor || ''}
             onChange={(e) => {
               if (e.target.value.charAt(0) !== '#') return setOctoColor('');
-              setOctoColor(e.target.value);
+              return setOctoColor(e.target.value);
             }}
           />
 
@@ -212,7 +212,7 @@ const Home = () => {
             value={bgColor || ''}
             onChange={(e) => {
               if (e.target.value.charAt(0) !== '#') return setBgColor('');
-              setBgColor(e.target.value);
+              return setBgColor(e.target.value);
             }}
           />
 

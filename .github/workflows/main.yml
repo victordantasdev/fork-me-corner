@@ -3,9 +3,8 @@ name: CI
 on: 
   workflow_dispatch:
     branches: [main]
-  push:
-    paths:
-      - 'package.json'
+  release:
+    types: [created]
 
 defaults:
   run:

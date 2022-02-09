@@ -1,7 +1,5 @@
 # fork-me-corner
 
-![CI](https://github.com/victordantasdev/fork-me-corner/actions/workflows/main.yml/badge.svg)
-
 `fork-me-corner` is a react component available on npm to easily link to your project on github and is made using React, TypeScript and styled-components.
 
 And you can configure the component as you like by changing the background color by passing a string with a hex code to a `bgColor` property just as you can change the color of the GitHub logo by passing an `octoColor` property. In addition you can pass to a `prideFlag` property the name of 17 LGBTQIA+ flags available in the component and you can pass to a `flagDirection` property the `vertical` or `horizontal` properties to determine in which direction the flag will appear in the component background.

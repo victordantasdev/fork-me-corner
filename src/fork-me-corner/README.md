@@ -64,3 +64,7 @@ const App = () => (
 |demiboy|![demiboy](https://user-images.githubusercontent.com/64330605/153068552-ade3b827-03ce-4785-bdd6-5693969e02be.png)| |polysexual|![polysexual](https://user-images.githubusercontent.com/64330605/153068576-713e269c-2569-4314-aa1f-3b647dadce20.png)| |
 |demigirl|![demigirl](https://user-images.githubusercontent.com/64330605/153068556-8029ee0e-6557-4e9e-ac2f-1cab42c66031.png)| |transgender|![transgender](https://user-images.githubusercontent.com/64330605/153068579-2a572254-4cd0-450c-85b3-76df486a0a34.png)| |
 |genderfluid|![genderfluid](https://user-images.githubusercontent.com/64330605/153068559-29405e24-fe6e-4309-9da5-fe37b63dfc87.png)|
+
+## Contributing
+
+[Contributing guideline](https://github.com/victordantasdev/fork-me-corner/blob/main/CONTRIBUTING.md)

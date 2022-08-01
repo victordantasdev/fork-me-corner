@@ -27,7 +27,7 @@
     "@types/react": "^18.0.14",
     "@types/styled-components": "^5.1.25",
     "@typescript-eslint/eslint-plugin": "^5.30.3",
-    "@typescript-eslint/parser": "^5.30.3",
+    "@typescript-eslint/parser": "^5.31.0",
     "cz-conventional-changelog": "^3.0.1",
     "eslint": "^8.19.0",
     "eslint-config-airbnb": "^19.0.4",
